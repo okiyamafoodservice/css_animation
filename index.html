@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>transition</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/modern-css-reset/dist/reset.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <style>
+      .hoge::after {
+        content: "\f061";
+        font-family: "FontAwesome";
+        font-weight: 900;
+      }
+
+      .fa-arrow-right {
+        transform: rotate(45deg) translateX(30px);
+      }
+
+      .hoge {
+        cursor: pointer;
+      }
+      /* duration アニメーションにかかる時間 */
+      /* delay　開始時間 */
+      /* property　変更するプロパティ */
+      /* timing-function 変更の流れ */
+      .hoge:hover {
+        background-color: #f00;
+        transition-duration: 1s;
+        transition-delay: 0s;
+        transition-property: background-color;
+        transition-timing-function: easeInOutSine;
+      }
+
+      a {
+        display: inline-block;
+        margin-bottom: 30px;
+        padding: 10px 20px;
+        border-radius: 25px;
+        text-align: center;
+        text-decoration: none;
+      }
+
+      .btn01 {
+        border: 2px solid;
+        background-color: #ddd;
+        color: #000;
+        transition: 0.3s 0.5s;
+      }
+
+      .btn01:hover {
+        background-color: #000;
+        transition: 0.3s 0.5s all;
+        color: #fff;
+        text-shadow: 3px 3px 20px #ff99cc, -2px 1px 30px #ff99cc;
+      }
+
+      /* テキストの影 */
+      .text01 {
+        text-shadow: 0px 3px 5px rgb(44, 43, 43), 0px 3px 5px rgb(132, 49, 49);
+      }
+
+      /* box-shadow: 水平方向の位置 垂直方向の位置 ぼかし度 影の広さ 色  内側にするか; */
+      /* insetをつけると内側につく */
+      /* .btn02 {
+                    box-shadow: 3px 3px 3px 3px #f00 inset;
+                  }
+
+                  /* カンマ区切りで複数指定することも可能*/
+      /* .btn02 {
+                    box-shadow: 3px 3px 3px 3px #f00 inset, 3px 3px 3px 3px #00f;
+                  } */
+
+      .btn02 {
+        border: 2px solid;
+        background-color: #ddd;
+        color: #000;
+        transition: 0.5s;
+      }
+
+      .btn02:hover {
+        transform: translateY(-2px);
+
+        box-shadow: 0 4px 5px 0px #000;
+      }
+
+      /* linear-gradient(開始の色, 終了の色); */
+
+      /* .btn03 {
+              background: linear-gradient(#ff0000, #ffff00);
+            } */
+
+      /* linear-gradient(to 方向, 開始の色, 終了の色); */
+
+      /* 「top」「right」「bottom」「left」 */
+      .btn03 {
+        background: linear-gradient(to right, #ff0000, #ffff00);
+      }
+
+      /* 2つ方向を指定することで斜め方向へのグラデーションも設定することができる */
+      .btn03 {
+        background: linear-gradient(to bottom right, #ff0000, #ffff00);
+      }
+
+      /* linear-gradient(角度, 開始の色, 終了の色); */
+
+      /* 単位はdeg */
+      .btn03 {
+        background: linear-gradient(90deg, #ff0000, #ffff00);
+      }
+
+      /* マイナスの値も指定できる */
+      .btn03 {
+        background: linear-gradient(-90deg, #ff0000, #ffff00);
+      }
+
+      /* 色はいくつでも指定できる */
+      .btn03 {
+        background: linear-gradient(90deg, #ff0000, #ffff00, #ff00ff);
+      }
+
+      /* 色が変わる位置（色経由点）を決める */
+      /* linear-gradient(方向, 開始の色 位置, 終了の色 位置); */
+
+      .btn03 {
+        background: linear-gradient(90deg, #ff0000 50%, #ffff00 80%, #ff00ff);
+      }
+    </style>
+  </head>
+  <body>
+    <i class="fa-solid fa-arrow-right"></i>
+    <p class="hoge"></p>
+
+    <a class="btn01" href="#">練習</a>
+
+    <p class="text01">テキストシャドウ</p>
+
+    <a class="btn02" href="#">ボックスシャドウ</a>
+
+    <a class="btn02" href="#">上に移動し影がついて浮き上がる</a>
+
+    <a class="btn03" href="#">グラデーション</a>
+  </body>
+</html>
